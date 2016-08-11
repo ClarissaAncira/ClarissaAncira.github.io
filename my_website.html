@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <link rel = "stylesheet" href = "my_website.css">
+            <script src = "thing.js">
+            </script>
+            <title> Clarissa Ancira's Website
+            </title>
+        <head>
+        <body>
+            <img src = "GWC_logo_2016_.png">
+            <p> </p>
+            <h1>Summer Immersion Program
+            </h1>
+            <p> </p>
+            <img src = "PaddleScreenshot.png" id = "hi" onclick = "changePhoto()">
+            <p> </p>
+            <h1>Paddle Ball</h1>
+            <p> </p>
+            <img src = "SquareScreenshot.png" id = "square" onclick = "change2Photo()">
+            <p> </p>
+            <h1>Making a Square
+            </h1>
+            <p> </p>
+            <img src = "ScrollerScreenshot.png" id = "scroller" onclick = "change3Photo()">
+            <p> </p>
+            <h1>City Scroller
+            </h1>
+            <p> </p>
+            <h1>About Me
+            </h1>
+            <p>My name is Clarissa Ancira. I'm  Junior at Tahoma High School. I have three brothers. They're cool, I guess.
+        </body>
+    </html>
+    <html>
+  <head>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Some Places</h1>
+    <p> </p>
+    <div id="map"></div>
+    <script>
+//Making the function to make the map
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 47.378554, lng: -122.025979},
+            zoom: 13
+        });
+      }
+//Making the map
+function initMap() {
+  var myLatLng = {lat: 47.378554, lng: -122.025979};
+  var school = {lat: 47.387084, lng: -122.100221};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: myLatLng
+  });
+//Marking my house
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'My House'
+  });
+// When the user clicks the marker, an info window opens.
+var contentString = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">My House</h1>'+
+    '<div id="bodyContent">'+
+    '<p>My family and I moved into this house when I was in second grade. ' +
+    'I use to move around a lot when I was younger so I did not think we were going to stay for very long. '+
+    'We still live here so I guess I was wrong.'+
+    '</div>'+
+    '</div>';
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'My House'
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+//box for school
+var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Tahoma High School</h1>'+
+      '<div id="bodyContent">'+
+      '<p>I go to school here. '+
+      'It is really crowded. '+
+      'I do not like being here. '+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+//marking school
+  var marker = new google.maps.Marker({
+    position: school,
+    map: map,
+    title: 'Tahoma High School'
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+}
+
+    </script>
+ <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE-LcGNHFIW4G2hksdu2vMnUhhQS3g1Nk&callback=initMap">
+    </script>
+  </body>
+</html>
+

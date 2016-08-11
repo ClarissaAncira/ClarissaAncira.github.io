@@ -1,0 +1,19 @@
+body {
+    background-image: url("backblack.jpg");
+    /*backgound: linear-gradient (down, black, grey);*/
+    text-align: center;
+}
+h1 {
+    font-family: "Courier New", Courier, monospace;
+    border: 4px solid #ffff1a;
+    width: 300px;
+    margin: 0 auto;
+
+    color: LightSeaGreen;
+}
+h2 {
+    color: LightSeaGreen;
+}
+p {
+    color: LightSeaGreen;
+}
